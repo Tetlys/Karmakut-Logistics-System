@@ -7,6 +7,21 @@ objectInits = [
         true
     ],
 
+    //Adds
+    [
+        FOB,
+        {_this execVM "ActivateBuild.sqf"}
+
+    ],
+
+    [
+         COP,
+         {_this execVM "ActivateBuild.sqf"}
+
+    ],
+
+
+
     // Add ACE variables to corresponding building types
     [
         repair_buildings,

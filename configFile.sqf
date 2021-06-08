@@ -113,6 +113,18 @@ ace_canDrag = [
 ];
 
 
+// FOB Building Type
+FOB = "";
+
+//Sets FOB in transit Vehicle Type
+FOBTransit = "";
+
+// COP Building Type
+COP = "";
+
+//Sets COP in transit Vehicle Type
+COPTransit = "";
+
 
 //which type of barrel to spawn
 Small_Barrel = "Land_MetalBarrel_F";
@@ -126,8 +138,4 @@ Small_Barrel_Chance = 50;
 
 //buildings in which supplies will spawn
 Factory_Buildings = ["Land_i_Shed_Ind_F"];
-
-
-[playerSide west,  "Land_MetalBarrel_F"] call ace_dragging_fnc_canDrop_carry;
-[playerSide west, "CargoNet_01_barrels_F"] call ace_dragging_fnc_canDrop_carry;
 

@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2197b90-ac14-4521-b5af-da0c07d96afb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/onPlayerRespawn.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Karmakut-Logistics-System.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Permissions.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ActivateBuild.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/ActivateBuild.sqf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildTrigger.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/BuildTrigger.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Buildconfig.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/Buildconfig.sqf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Convert.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/Convert.sqf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GetBudget.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/GetBudget.sqf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlobalVariables.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalVariables.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ObjectInit.sqf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SetBudget.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/SetBudget.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StopBuild.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/StopBuild.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StopBuild.sqf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/configFile.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/configFile.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/init.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/server/manage_factory.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/server/manage_factory.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objectInits.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/objectInits.sqf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +50,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joshr\Documents\GitHub\Karmakut-Logistics-System" />
       <recent name="G:\Karmakut-Logistics-System\scripts" />
       <recent name="G:\Karmakut-Logistics-System\scripts\server" />
       <recent name="G:\Karmakut-Logistics-System" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -77,6 +74,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1623139198304">

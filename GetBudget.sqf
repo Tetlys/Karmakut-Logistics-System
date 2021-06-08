@@ -1,2 +1,2 @@
 
-_Budget = missionNamespace getVariable (str (this getpos));
+BUDGET = missionNamespace getVariable (str (this getpos));

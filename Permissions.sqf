@@ -1,0 +1,13 @@
+profileNamespace setVariable ["Perms_Build", _CurrentUIDS]; // Sets new Variable
+
+_CurrentUIDS = [
+
+"76561198402038100", //NOACE
+"76561198060416563", //COFFEE
+"76561198047333011", //TETLYS
+"76561198027253604", //FORTIS
+"76561198343484805", //Azraeel
+"76561198010961319", //Ryan
+"76561197994896067" // DOB
+
+];

@@ -1,11 +1,10 @@
-// FOB Building Type
+//List of FOBs
 FOBs = [];
 
-//Sets FOB in transit Vehicle Type
-FOBTransit = [];
-
-// COP Building Type
+//List of COPs
 COPs = [];
 
+//Budget Variable
+BUDGET = [];
 
-COPTransit = [];
+

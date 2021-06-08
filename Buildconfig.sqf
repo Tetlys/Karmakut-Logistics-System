@@ -1,6 +1,6 @@
 #include "GetBudget.sqf"
 
-_Budget = profileNamespace getVariable "Budget";
+BUDGET = profileNamespace getVariable "Budget";
 
 /*
  * Author: Kingsley
@@ -18,7 +18,7 @@ _Budget = profileNamespace getVariable "Budget";
  * None
  *
  * Example:
- * [west, _Budget, [["Land_BagFence_Long_F", 5], ["Land_BagBunker_Small_F", 50]]] call acex_fortify_fnc_registerObjects
+ * [west, BUDGET, [["Land_BagFence_Long_F", 5], ["Land_BagBunker_Small_F", 50]]] call acex_fortify_fnc_registerObjects
  *
  * Public: Yes
  */
