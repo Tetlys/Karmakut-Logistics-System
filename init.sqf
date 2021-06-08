@@ -1,6 +1,7 @@
 ExecVM "AddMarkers.sqf";
 [] call compileFinal preprocessFileLineNumbers "GlobalVariables.sqf";
 [] call compileFinal preprocessFileLineNumbers "configFile.sqf";
+[] call compileFinal preprocessFileLineNumbers "objectInits.sqf";
 
 if ([player, west, {}] call acex_fortify_objectPlaced) then [execVM "SetBudget.sqf"];
 if ([player, west, {}] call acex_fortify_objectDeleted) then [execVM "SetBudget.sqf"];

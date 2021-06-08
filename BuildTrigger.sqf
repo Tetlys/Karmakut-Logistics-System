@@ -66,7 +66,7 @@ _RemoveItems = player removeItem "ACE_Fortify"; // Removes ability to fortify
 	execVM "BuildTriggers.sqf";
   };
 
- if [player nearestObject FOB,COP}] == COP then {
+ if [player nearestObject FOB,COP] == COP then {
 
 	_FortifyAllowed = createTrigger ["EmptyDetector", _BuildPoint];
 	_FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];

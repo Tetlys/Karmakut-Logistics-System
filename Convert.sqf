@@ -7,11 +7,11 @@ if (FOBTransit) then {
 
 		profileNamespace setVariable [str (this getpos) ,  0 ]; // Sets new Variable
 		
-		deleteVehicle this
+		deleteVehicle this;
 
-		FOB createVehicle (this getpos)
+		FOB createVehicle (this getpos);
 
-		};
+		}
 	];
 };
 
@@ -22,42 +22,42 @@ if (FOB && [profileNamespace getVariable str (this getpos)] == 0 ) then {
 
 		profileNamespace setVariable [str (this getpos) ,  nil ]; // Sets new Variable
 		
-		deleteVehicle this
+		deleteVehicle this;
 
-		FOBTransit createVehicle (this getpos)
+		FOBTransit createVehicle (this getpos);
 
-		};
+		}
 	];
 };
 
 
 //Change the COP mobile crate into a fixed COP
 
-if (_COPTransit) then {
+if (COPTransit) then {
 
 		this addAction [ "Convert COP" , {
 
 		profileNamespace setVariable [str (this getpos) ,  0 ]; // Sets new Variable
 		
-		deleteVehicle this
+		deleteVehicle this;
 
-		 _COP createVehicle (this getpos)
+		COP createVehicle (this getpos)
 
-		};
+		}
 	];
 };
 
 
-if (_COP && [profileNamespace getVariable str (this getpos)] == 0 ) then {
+if (COP && [profileNamespace getVariable str (this getpos)] == 0 ) then {
 
 		this addAction [ "Convert COP" , {
 
 		profileNamespace setVariable [str (this getpos) ,  nil ]; // Sets new Variable
 		
-		deleteVehicle this
+		deleteVehicle this;
 
-		_COPTransit createVehicle (this getpos)
+		COPTransit createVehicle (this getpos);
 
-		};
+		}
 	];
 };

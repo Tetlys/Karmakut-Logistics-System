@@ -7,22 +7,23 @@ if (alive Player && (getplayerUid player in _CanBuild))   then {  // If alive, a
 	
 	_this addAction ["<t color='#FF0000'>Activate Building</t>", {  // Add activate building option
 		
-		if (count _activated <1) then {  // If less than 1 active, Run script, add one to profile name space
+      if (count _activated <1) then {  // If less than 1 active, Run script, add one to profile name space
 
-			execVM _content; // Starts build trigger
+        execVM _content; // Starts build trigger
 
-			_activated = _activated + 1; // adds one to activated
+        _activated = _activated + 1; // adds one to activated
 
-			profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
+        profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
 
-			saveProfileNamespace; // saves profile
+        saveProfileNamespace; // saves profile
 
-			profileNamespace setVariable ["", _activated]; // Sets new Variable
+        profileNamespace setVariable ["", _activated]; // Sets new Variable
 
-		} else {
-		Player remoteExec hint "Already activated somewhere else!"; // Already a build in progress, deny start.
-		};
-	};
+      } else {
+      Player remoteExec hint "Already activated somewhere else!"; // Already a build in progress, deny start.
+      };
+	}
+	];
 };
 
 

@@ -1,11 +1,11 @@
 // FOB Building Type
-FOB = [];
+FOBs = [];
 
 //Sets FOB in transit Vehicle Type
 FOBTransit = [];
 
 // COP Building Type
-COP = [];
+COPs = [];
 
 
 COPTransit = [];
