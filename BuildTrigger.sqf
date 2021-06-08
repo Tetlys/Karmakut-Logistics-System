@@ -1,13 +1,13 @@
 
 #include "Buildconfig.sqf"
 
-_FOB = ""; // FOB Building Type
-_COP = ""; // COP Building Type
+FOB = ""; // FOB Building Type
+COP = ""; // COP Building Type
 
 _AddItems = player addItem "ACE_Fortify"; //Adds ability to fortify
 
-_AddMenuFOB = ;
-_AddMenuCOP = ;
+_AddMenuFOB = nil;
+_AddMenuCOP = nil;
 
 /*
  * Author: esteldunedain
@@ -31,8 +31,8 @@ _AddMenuCOP = ;
  */
 
 
-_RemoveMenuFOB = ;
-_RemoveMenuCOP = ;
+_RemoveMenuFOB = nil;
+_RemoveMenuCOP = nil;
 
 /*
  * Author: esteldunedain
@@ -52,26 +52,26 @@ _RemoveMenuCOP = ;
  * Public: No
  */
 
-_BuildPoint = getPos player nearestObject [_FOB,_COP]; // Gets location of nearest build point to the player
+_BuildPoint = getPos player nearestObject [FOB,COP]; // Gets location of nearest build point to the player
 
 _RemoveItems = player removeItem "ACE_Fortify"; // Removes ability to fortify 
 
 
- if [player nearestObject {_FOB,_COP}] = _FOB then [
+ if (nearestObject [getPos player, [FOB,COP]]) == FOB then {
 
 	_FortifyAllowed = createTrigger ["EmptyDetector", _BuildPoint];
 	_FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_FortifyAllowed setTriggerArea [250, 250, getDir this, true];
 	_FortifyAllowed setTriggerStatements ["this", {hint 'Building Enabled', _AddItems, _AddMenuFOB }, {hint 'Building Disabled', _RemoveItems, _RemoveMenuFOB }];
 	execVM "BuildTriggers.sqf";
-   ];
+  };
 
- if [player nearestObject {_FOB,_COP}] = _COP then [
+ if [player nearestObject FOB,COP}] == COP then {
 
 	_FortifyAllowed = createTrigger ["EmptyDetector", _BuildPoint];
 	_FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_FortifyAllowed setTriggerArea [100, 100, getDir this, true];
 	_FortifyAllowed setTriggerStatements ["this", {hint 'Building Enabled', _AddItems, _AddMenuCOP }, {hint 'Building Disabled', _RemoveItems, __RemoveMenuCOP }];
 	execVM "BuildTriggers.sqf";
-    ];
+  };
 

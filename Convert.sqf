@@ -1,7 +1,7 @@
 //Change the FOB mobile crate into a fixed FOB
 
 
-if (_FOBTransit) then {
+if (FOBTransit) then {
 
 		this addAction [ "Convert FOB" , {
 
@@ -9,14 +9,14 @@ if (_FOBTransit) then {
 		
 		deleteVehicle this
 
-		 _FOB createVehicle (this getpos)
+		FOB createVehicle (this getpos)
 
 		};
 	];
 };
 
 
-if (_FOB && [profileNamespace getVariable str (this getpos)] == 0 ) then {
+if (FOB && [profileNamespace getVariable str (this getpos)] == 0 ) then {
 
 		this addAction [ "Convert FOB" , {
 
@@ -24,7 +24,7 @@ if (_FOB && [profileNamespace getVariable str (this getpos)] == 0 ) then {
 		
 		deleteVehicle this
 
-		_FOBTransit createVehicle (this getpos)
+		FOBTransit createVehicle (this getpos)
 
 		};
 	];

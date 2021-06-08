@@ -1,8 +1,8 @@
-_CanBuild = profileNamespace getVariable "Perms_Build";  // Calls for UID list of people with build perms
+private _CanBuild = profileNamespace getVariable "Perms_Build";  // Calls for UID list of people with build perms
 
-_activated = profileNamespace getVariable "Activated"; // Calls for number of activated build stations (Max 1)
+private _activated = profileNamespace getVariable "Activated"; // Calls for number of activated build stations (Max 1)
 
-if [alive Player && {{}getplayerUid player} in _CanBuild}]   then [
+if (alive Player && (getplayerUid player) in _CanBuild) then {
 
 	_this addAction [ "<t color='#FF0000'>Stop Building</t>" , {
 
@@ -19,6 +19,5 @@ if [alive Player && {{}getplayerUid player} in _CanBuild}]   then [
 		};
 	
 	];
-];
-	
+};
 	
