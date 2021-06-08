@@ -3,6 +3,7 @@ ExecVM "AddMarkers.sqf"
 _FOB = ""; // FOB Building Type
 _FOBTransit = ""; //Sets FOB in transit Vehicle Type
 _COP = ""; // COP Building Type
+_COPTransit = "";
 
 if acex_fortify_objectPlaced [player, west, {}] then [execVM "SetBudget.sqf"];
 if acex_fortify_objectDeleted [player, west, {}] then [execVM "SetBudget.sqf"];
