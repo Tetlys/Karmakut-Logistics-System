@@ -56,6 +56,3 @@ class CfgVehicles {
 };
 
 
-
-[west, [_Budget], [_type2]] call acex_fortify_fnc_registerObjects;
-

@@ -63,6 +63,7 @@ _RemoveItems = player removeItem "ACE_Fortify"; // Removes ability to fortify
 	_FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_FortifyAllowed setTriggerArea [250, 250, getDir this, true];
 	_FortifyAllowed setTriggerStatements ["this", {hint 'Building Enabled', _AddItems, _AddMenuFOB }, {hint 'Building Disabled', _RemoveItems, _RemoveMenuFOB }];
+	execVM "BuildTriggers.sqf";
    ];
 
  if [player nearestObject {_FOB,_COP}] = _COP then [
@@ -71,5 +72,6 @@ _RemoveItems = player removeItem "ACE_Fortify"; // Removes ability to fortify
 	_FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_FortifyAllowed setTriggerArea [100, 100, getDir this, true];
 	_FortifyAllowed setTriggerStatements ["this", {hint 'Building Enabled', _AddItems, _AddMenuCOP }, {hint 'Building Disabled', _RemoveItems, __RemoveMenuCOP }];
+	execVM "BuildTriggers.sqf";
     ];
 

@@ -1,6 +1,5 @@
 
-_Budget = missionNamespace getVariable str (nearestObject [_FOB,_COP] getpos)
-
+_Budget = missionNamespace getVariable this getpos)
 
 
 
