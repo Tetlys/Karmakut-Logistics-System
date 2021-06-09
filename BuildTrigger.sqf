@@ -11,7 +11,10 @@ _RemoveItems = player removeItem "ACE_Fortify"; // Removes ability to fortify
 	_FortifyAllowed = createTrigger ["EmptyDetector", _BuildPoint];
 	_FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_FortifyAllowed setTriggerArea [250, 250, getDir this, true];
-	_FortifyAllowed setTriggerStatements ["this", {hint 'Building Enabled'; _AddItems;}, {hint 'Building Disabled'; _RemoveItems;}];
+	_FortifyAllowed setTriggerStatements [
+	    if getPlayerUID _Player in BUILD_PERMS then {"this", {hint 'Building Enabled'; _AddItems;}, {hint 'Building Disabled'; _RemoveItems;};
+        };
+    ];
   };
 
  if [player nearestObject FOB,COP] == COP then {
@@ -19,6 +22,9 @@ _RemoveItems = player removeItem "ACE_Fortify"; // Removes ability to fortify
 	_FortifyAllowed = createTrigger ["EmptyDetector", _BuildPoint];
 	_FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_FortifyAllowed setTriggerArea [100, 100, getDir this, true];
-	_FortifyAllowed setTriggerStatements ["this", {hint 'Building Enabled'; _AddItems;}, {hint 'Building Disabled'; _RemoveItems;}];
+	_FortifyAllowed setTriggerStatements [
+	    if getPlayerUID _Player in BUILD_PERMS then {"this", {hint 'Building Enabled'; _AddItems;}, {hint 'Building Disabled'; _RemoveItems;};
+        };
+    ];
   };
 

@@ -1,7 +1,8 @@
 [] call compileFinal preprocessFileLineNumbers "GlobalVariables.sqf";
 [] call compileFinal preprocessFileLineNumbers "configFile.sqf";
 [] call compileFinal preprocessFileLineNumbers "objectInits.sqf";
-[] call compileFinal preprocessFileLineNumbers "Permissions.sqf";
+[] call compileFinal preprocessFileLineNumbers "scripts\client\init_client.sqf";
+[] call compileFinal preprocessFileLineNumbers "scripts\server\init_server.sqf";
 
 this addEventHandler ["acex_fortify_objectPlaced", {
   params ["_player", "_side", "_objectPlaced"];

@@ -7,6 +7,8 @@ COPs = [];
 //Budget Variable
 BUDGET = [];
 
+Arsenal_typename = "B_supplyCrate_F";
+
 
 BUILD_PERMS = ["76561198402038100", //NOACE
                "76561198060416563", //COFFEE

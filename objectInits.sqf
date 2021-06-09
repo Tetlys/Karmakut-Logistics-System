@@ -7,33 +7,137 @@ objectInits = [
         true
     ],
 
+    [
+        [FOBTransit],
+        {
+        		_this addAction [ "Convert FOB" , {
+
+        		    profileNamespace setVariable [str (_this getpos) ,  0 ]; // Sets new Variable
+
+        		    deleteVehicle _this;
+
+        		    FOB createVehicle (_this getpos);
+
+        		    FOBs pushback (_this getpos);
+
+        		    }
+        		];
+        }
+    ],
+
+    [
+        [FOB],
+        {
+            if (profileNamespace getVariable str (_this getpos) = 0)  then {
+
+        		_this addAction [ "Convert FOB" , {
+
+        		    profileNamespace setVariable [str (_this getpos) ,  nil ]; // Sets new Variable
+
+        		    deleteVehicle _this;
+
+        		    FOBTransit createVehicle (_this getpos);
+
+        		    FOBs = FOBs - (_this getpos);
+
+        		    }
+        	    ];
+            };
+        }
+    ],
+
+    [
+        [COPTransit],
+        {
+        		_this addAction [ "Convert COP" , {
+
+        		    profileNamespace setVariable [str (_this getpos) ,  0 ]; // Sets new Variable
+
+        		    deleteVehicle _this;
+
+        		    COP createVehicle (_this getpos);
+
+        		    COPs pushback (_this getpos);
+
+        		    }
+        		];
+        }
+    ],
+
+    [
+        [FOB],
+        {
+            if (profileNamespace getVariable str (_this getpos) = 0)  then {
+
+        		_this addAction [ "Convert COP" , {
+
+        		    profileNamespace setVariable [str (_this getpos) ,  nil ]; // Sets new Variable
+
+        		    deleteVehicle _this;
+
+        		    COPTransit createVehicle (_this getpos);
+
+        		    COPs = COPs - (_this getpos);
+
+        		    }
+        	    ];
+            };
+        }
+    ],
+
+
+
+
     //Adds fob object to the
     [
-        FOB,
-        {_this execVM "ActivateBuild.sqf"}
+        [FOB,COP],
+        {
+        _this addAction [ "<t color='#FF0000'>Stop Building</t>" , {
+                      if ((_this select 1) in BUILD_PERMS) then {
+                          deleteVehicle _FortifyAllowed;
+                          _activated = 0; // removes one from activated
+                          if (isPlayer (_this select 1)) then {[removeItem "ACE_Fortify"];};
+                          profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
+                          saveProfileNamespace; // saves profile
+                      } else {
+                          hint "build is already active elsewhere";
+                      };
+        }
+
+    ],
+
+    [
+        [FOB,COP],
+        {
+          _this addAction ["<t color='#FF0000'>Activate Building</t>", { // Add activate building option
+              if ((_this select 1) in BUILD_PERMS) then {
+                  if ( _activated == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
+                      execVM _content; // Starts build trigger
+                      _activated = _activated + 1; // adds one to activated
+                      profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
+                      saveProfileNamespace; // saves profile
+                  } else {
+                  hint "build is already active elsewhere";
+                  };
+              };
+          }];
+        }
 
     ],
 
     // Add ACE variables to corresponding building types
     [
-        repair_buildings,
+        [repair_buildings],
         {_this setVariable ["ace_isRepairFacility", 1, true];}
     ],
     [
-        medical_facilities,
+        [medical_facilities],
         {_this setVariable ["ace_medical_isMedicalFacility", true, true];}
     ],
     [
-        medical_vehicles,
+        [medical_vehicles],
         {_this setVariable ["ace_medical_isMedicalVehicle", true, true];}
     ],
-
-    // Hide Cover on big GM trucks
-    [
-        ["gm_ge_army_kat1_454_cargo", "gm_ge_army_kat1_454_cargo_win"],
-        {_this animateSource ["cover_unhide", 0, true];}
-    ],
-
 
     // Crate to Aresenal
     [
@@ -94,7 +198,7 @@ objectInits = [
         {[_this] execVM "scripts\ammoboxes\USAFammo.sqf";}
     ],
     [
-        ace_canCarry,
+        [ace_canCarry],
         {[_this, true, [0, 1.5, 0], 0] remoteExec ["ace_dragging_fnc_setCarryable"];}
     ]
 ];

@@ -7,14 +7,14 @@ while {true} do {
       if (_activated == 0) then {
           _obj addAction ["<t color='#FF0000'>Activate Building</t>", { // Add activate building option
               if ((_this select 1) in BUILD_PERMS) then {
-                  if (count _activated == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
+                  if ( _activated == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
                       execVM _content; // Starts build trigger
                       _activated = _activated + 1; // adds one to activated
                       profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
                       saveProfileNamespace; // saves profile
                   } else {
                   hint "build is already active elsewhere";
-                  }
+                  };
               };
           }];
       } else {
@@ -27,7 +27,7 @@ while {true} do {
                   saveProfileNamespace; // saves profile
               } else {
                   hint "build is already active elsewhere";
-              }
+              };
           }
           ];
       };

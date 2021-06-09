@@ -3,8 +3,8 @@ private _factories = nearestObjects [[0,0,0], Factory_Buildings, 50000]; //get a
 private _resourcesPerFactory = createHashMap;
 
 {
- _resourcesPerFactory set [getPos _x, count nearestObjects [getPos _x, Factory_Buildings, 200]];
-} forEach _factories
+ _resourcesPerFactory set [getPos _x, count (getPos _x nearObjects [[Small_Barrel, Bigger_Barrel], 200])];
+} forEach _factories;
 
 while (true) do {
   {
