@@ -15,12 +15,6 @@ this addEventHandler ["acex_fortify_objectDeleted", {
 	BUDGET = call acex_fortify_fnc_getBudget;
 }];
 
-this addEventHandler ["acex_fortify_objectDeleted", {
-  params ["_player", "_side", "_objectDeleted"];
-  [ALiVE_SYS_LOGISTICS,"updateObject",[_objectDeleted]] call ALIVE_fnc_logistics;
-	BUDGET = call acex_fortify_fnc_getBudget;
-}];
-
 [{
     params ["_unit", "_object", "_cost"];
     private _return = (getPosATL _object) select 2 < 1;

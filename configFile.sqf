@@ -114,16 +114,16 @@ ace_canDrag = [
 
 
 // FOB Building Type
-FOB = "";
+FOB = "Land_Cargo_HQ_V1_F";
 
 //Sets FOB in transit Vehicle Type
-FOBTransit = "";
+FOBTransit = "B_T_Truck_01_box_F";
 
 // COP Building Type
-COP = "";
+COP = "Land_Cargo_House_V1_F";
 
 //Sets COP in transit Vehicle Type
-COPTransit = "";
+COPTransit = "rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy";
 
 
 //which type of barrel to spawn
@@ -134,7 +134,7 @@ Bigger_Barrel = "CargoNet_01_barrels_F";
 Resource_Cap_Factory = 5;
 
 // chance that factory will spawn smaller barrel
-Small_Barrel_Chance = 50;
+Small_Barrel_Chance = 75;
 
 //buildings in which supplies will spawn
 Factory_Buildings = ["Land_i_Shed_Ind_F"];
@@ -142,3 +142,164 @@ Factory_Buildings = ["Land_i_Shed_Ind_F"];
 MAX_FOBS = 5;
 MAX_COPS = 10;
 
+_StaticWeapons = {
+ ["RHS_Stinger_AA_pod_WD", 100]
+ ["RHS_M2StaticMG_WD", 100]
+ ["RHS_M2StaticMG_MiniTripod_WD", 100]
+ ["RHS_TOW_TriPod_WD", 100]
+ ["RHS_MK19_TriPod_WD", 100]
+};
+_WallsAndGates = {
+["Land_New_WiredFence_5m_F", 100]
+["Land_New_WiredFence_10m_F", 100]
+["Land_Razorwire_F", 100]
+["Land_BarGate_F", 100]
+["Land_DragonsTeeth_01_4x2_new_F", 100]
+["Land_DragonsTeeth_01_1x1_new_F", 100]
+};
+_SandbagBunkers = {
+["UK3CB_Nest", 100]
+["Land_BagBunker_Small_F", 100]
+["Land_BagBunker_Large_F", 100]
+};
+_SandbagWallsTall = {
+["Land_SandbagBarricade_01_half_F", 100]
+["Land_SandbagBarricade_01_F", 100]
+["Land_SandbagBarricade_01_hole_F", 100]
+};
+_Sandbags = {
+["Land_BagFence_Corner_F", 100]
+["Land_BagFence_End_F", 100]
+["Land_BagFence_Long_F", 100]
+["Land_BagFence_Round_F", 100]
+["Land_BagFence_Short_F", 100]
+};
+_HbarrierWall = {
+["Land_HBarrierWall_corridor_F", 100]
+["Land_HBarrierWall_corner_F", 100]
+["Land_HBarrierWall6_F", 100]
+["Land_HBarrierWall4_F", 100]
+};
+_CamoNets = {
+["CamoNet_BLUFOR_F", 100]
+["CamoNet_BLUFOR_open_F", 100]
+["CamoNet_BLUFOR_big_F", 100]
+};
+_Lights = {
+["Land_Sawmill_01_illuminati_tower_F", 100]
+["TFAR_Land_Communication_F", 100]
+["Land_PortableLight_double_F", 100]
+["Land_PortableLight_single_F", 100]
+["Land_LampAirport_F", 100]
+};
+_HBarrierBlocks = {
+["Land_HBarrier_3_F", 100]
+["Land_HBarrier_5_F", 100]
+["Land_HBarrier_1_F", 100]
+};
+_AirportLamps = {
+["Land_PortableHelipadLight_01_F", 100]
+["PortableHelipadLight_01_green_F", 100]
+["PortableHelipadLight_01_blue_F", 100]
+["PortableHelipadLight_01_red_F", 100]
+["PortableHelipadLight_01_white_F", 100]
+["PortableHelipadLight_01_yellow_F", 100]
+};
+_Bunkers = {
+["Land_HBarrierTower_F", 100]
+["Land_Bunker_01_tall_F", 100]
+["Land_Bunker_01_small_F", 100]
+["Land_HBarrier_01_tower_green_F", 100]
+};
+_MilitaryBuildings = {
+["Land_Cargo_Patrol_V1_F", 100]
+["Land_Cargo_Tower_V1_F", 100]
+["Land_TentHangar_V1_F", 100]
+["Land_MedicalTent_01_NATO_generic_open_F", 100]
+};
+_MedicalBuildings = {
+["Land_Medevac_HQ_V1_F", 100]
+["Land_Medevac_house_V1_F", 100]
+};
+_RepairPoints = {
+["B_Slingload_01_Ammo_F", 100]
+["B_Slingload_01_Fuel_F", 100]
+["B_Slingload_01_Repair_F", 100]
+};
+_MedicalVehicle = {
+["rhsusf_m113_usarmy_medical", 100]
+["RHS_UH60M_MEV2", 100]
+};
+_APC = {
+["rhsusf_stryker_m1132_m2_wd", 100]
+["rhsusf_stryker_m1127_m2_wd", 100]
+["rhsusf_stryker_m1126_mk19_wd", 100]
+["rhsusf_stryker_m1126_m2_wd", 100]
+};
+_Arty = {
+["RHS_M119_WD", 100]
+["rhsusf_m109_usarmy", 100]
+["RHS_M252_WD", 100]
+};
+_LightVehicles = {
+["rhsusf_m1025_w_m2", 100]
+["rhsusf_m1025_w_mk19", 100]
+["rhsusf_m1025_w", 100]
+["rhsusf_m998_w_2dr_halftop", 100]
+["rhsusf_mrzr4_d", 100]
+};
+_TransportRotary = {
+["RHS_CH_47F", 100]
+["RHS_MELB_MH6M", 100]
+["vtx_UH60M", 100]
+["RHS_UH60M", 100]
+};
+_CASRotary = {
+["RHS_AH64D_wd", 100]
+["RHS_MELB_AH6M", 100]
+["vtx_MH60M", 100]
+};
+_IFVs = {
+["RHS_M2A3_BUSKIII_wd", 100]
+["RHS_M2A2_BUSKI_WD", 100]
+["RHS_M6_wd", 100]
+["rhsusf_M1117_W", 100]
+};
+_MRAPs = {
+["rhsusf_M1220_usarmy_wd", 100]
+["rhsusf_M1220_M2_usarmy_wd", 100]
+["rhsusf_M1220_MK19_usarmy_wd", 100]
+["rhsusf_m1240a1_usarmy_wd", 100]
+["rhsusf_m1240a1_m2_usarmy_wd", 100]
+["rhsusf_m1240a1_mk19_usarmy_wd", 100]
+};
+_Tanks = {
+["rhsusf_m1a2sep2wd_usarmy", 100]
+["rhsusf_m1a2sep1tuskiiwd_usarmy", 100]
+};
+_Logistics = {
+["rhsusf_M1078A1R_SOV_M2_D_fmtv_socom", 100]
+["rhsusf_M977A4_REPAIR_usarmy_wd", 100]
+["rhsusf_M977A4_BKIT_M2_usarmy_wd", 100]
+["rhsusf_M977A4_BKIT_usarmy_wd", 100]
+};
+_Trucks = {
+["rhsusf_M1083A1P2_B_WD_fmtv_usarmy", 100]
+["rhsusf_M1083A1P2_B_WD_flatbed_fmtv_usarmy", 100]
+["rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy", 100]
+["rhsusf_M1083A1P2_B_M2_WD_flatbed_fmtv_usarmy", 100]
+};
+_ResourceExchange = {
+["CargoNet_01_barrels_F", 500]
+["Land_MetalBarrel_F", 100]
+};
+_BuildPoint = {
+["rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy", 100] // COP in transit
+["B_T_Truck_01_box_F", 100] // FOB In Transit
+};
+_Planes = {
+["USAF_C17", 100]
+["USAF_AC130U", 100]
+["USAF_A10", 100]
+["RHSGREF_A29B_HIDF", 100]
+};
