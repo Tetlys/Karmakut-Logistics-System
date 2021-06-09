@@ -4,13 +4,8 @@
     <list default="true" id="f2197b90-ac14-4521-b5af-da0c07d96afb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ActivateBuild.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/ActivateBuild.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildTrigger.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/BuildTrigger.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Convert.sqf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GlobalVariables.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalVariables.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configFile.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/configFile.sqf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/init.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objectInits.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/objectInits.sqf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/server/manage_factory.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/server/manage_factory.sqf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

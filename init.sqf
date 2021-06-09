@@ -4,7 +4,7 @@
 [] call compileFinal preprocessFileLineNumbers "scripts\client\init_client.sqf";
 [] call compileFinal preprocessFileLineNumbers "scripts\server\init_server.sqf";
 
-this addEventHandler ["acex_fortify_objectPlaced", {
+_this addEventHandler ["acex_fortify_objectPlaced", {
   params ["_player", "_side", "_objectPlaced"];
   [ALiVE_SYS_LOGISTICS,"updateObject",[_objectPlaced]] call ALIVE_fnc_logistics;
 	BUDGET = call acex_fortify_fnc_getBudget;
