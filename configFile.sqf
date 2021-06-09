@@ -139,3 +139,6 @@ Small_Barrel_Chance = 50;
 //buildings in which supplies will spawn
 Factory_Buildings = ["Land_i_Shed_Ind_F"];
 
+MAX_FOBS = 5;
+MAX_COPS = 10;
+
