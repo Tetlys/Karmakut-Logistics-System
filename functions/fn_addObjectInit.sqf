@@ -1,6 +1,6 @@
 params [
-    ["_object", objNull, [objNull]]
-];
+      ["_object", objNull, [objNull]]
+  ];
 
 if (isNull _object) exitWith {["Null object given"] call BIS_fnc_error; false};
 
