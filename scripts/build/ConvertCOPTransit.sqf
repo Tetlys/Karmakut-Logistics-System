@@ -1,14 +1,16 @@
 params ["_vehicle"];
 
 _vehicle addAction [ "Convert COP" , {
+    params ["_target", "_caller", "_actionId", "_arguments"];
+    private _vehiclePos = getPos _target;
 
-    profileNamespace setVariable ["_vehicle getpos" ,  0 ]; // Sets new Variable
+    deleteVehicle _target;
 
-    deleteVehicle _vehicle;
+    private _newCOP = COP createVehicle (_vehiclePos);
 
-    COP createVehicle (getpos _vehicle);
+    _newCOP execVM "scripts\build\ConvertCOP.sqf";
 
-    COPs pushback (getpos _vehicle);
+    COPs pushback (str _vehiclePos);
 
     }
 ];

@@ -1,15 +1,23 @@
 params ["_building"];
-if (profileNamespace getVariable str getpos _building)  == 0 then {
+// if (profileNamespace getVariable str getpos _building)  == 0 then {
 
-     _building addAction [ "Convert FOB" , {
 
-        profileNamespace setVariable [str getpos _building ,  nil ]; // Sets new Variable
+diag_log format ["Player UID ConvertFOB %1", getPlayerUID player];
 
-        deleteVehicle _building;
+// TODO: Prevent people without perms getting this action added?
+// TODO: Fix this conditional
+if ( true ) then {
+    _building addAction [ "Convert FOB" , {
+        params ["_target", "_caller", "_actionId", "_arguments"];
+        
+        private _vehiclePos = getPos _target;
+        deleteVehicle _target;
 
-        FOBTransit createVehicle (getpos _building);
+        private _newFOBTransit = FOBTransit createVehicle (_vehiclePos);
 
-        FOBs = FOBs - (getpos _building);
+        _newFOBTransit execVM "scripts\build\ConvertFOBTransit.sqf";
+
+        FOBs = FOBs - [str _vehiclePos];
 
         }
     ];

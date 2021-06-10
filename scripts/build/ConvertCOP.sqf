@@ -1,15 +1,20 @@
 params ["_building"];
-if (profileNamespace getVariable str ("getpos _building") == 0 ) then {
 
+// TODO: Fix this conditional
+if ( true ) then {
+    
      _building addAction [ "Convert COP" , {
+        params ["_target", "_caller", "_actionId", "_arguments"];
 
-        profileNamespace setVariable ["getpos _building" ,  nil ]; // Sets new Variable
+        private _vehiclePos = getPos _target;
 
-        deleteVehicle _building;
+        deleteVehicle _target;
 
-        COPTransit createVehicle (getpos _building);
+        private _newCOPTransit = COPTransit createVehicle (_vehiclePos);
 
-        COPs = COPs - (getpos _building);
+        _newCOPTransit execVM "scripts\build\ConvertCOPTransit.sqf";
+
+        COPs = COPs - [str _vehiclePos];
 
         }
     ];

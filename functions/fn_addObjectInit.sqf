@@ -1,3 +1,4 @@
+// TODO: This file doesn't get referenced or ran once.
 params [
       ["_object", objNull, [objNull]]
   ];
@@ -12,6 +13,7 @@ private _elements = objectInitsCache getVariable typeOf _object;
 // Find and cache matching objectInits
 if (isNil "_elements") then {
     _elements = objectInits select {
+
         _x params ["_classes", "", ["_inheritance", false]];
 
         if (_inheritance) then {
@@ -35,5 +37,3 @@ if (_elements isEqualTo []) exitWith {
 {
     _object call (_x select 1);
 } forEach _elements;
-
-true

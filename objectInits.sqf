@@ -1,5 +1,8 @@
 params ["_vehicle", "_Building"];
 
+
+diag_log "objectInits.sqf INIT";
+
 objectInits = [
 
     // Add helipads to zeus, as they can't be recycled after built
@@ -33,7 +36,7 @@ objectInits = [
     ],
 
     [
-        [FOB],
+        [COP],
         {
         {[_this] execVM "scripts\build\ConvertCOP.sqf";}
         }
