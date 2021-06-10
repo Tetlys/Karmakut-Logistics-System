@@ -15,11 +15,12 @@ _vehicle addAction [ "Convert FOB" , {
 
     private _newFOB = FOB createVehicle (_vehiclePos);
 
+    FOBs pushback (str _vehiclePos);
 
     _newFOB execVM "scripts\build\ConvertFOB.sqf";
 
 
-    FOBs pushback (str _vehiclePos);
+  
 
     }
 ];

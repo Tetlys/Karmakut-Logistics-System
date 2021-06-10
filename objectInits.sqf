@@ -3,6 +3,31 @@ params ["_vehicle", "_Building"];
 
 diag_log "objectInits.sqf INIT";
 
+// TODO: For other vehicles?
+// NOTE: Doesn't work for buildings??
+[FOB, "init", {
+    diag_log "FOB Init";
+    _this execVM "scripts\build\ConvertFOB.sqf";
+    _this execVM "scripts\build\ActivateBuild.sqf"
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+
+[FOBTransit, "init", {
+    diag_log "FOBTransit Init";
+    _this execVM "scripts\build\ConvertFOBTransit.sqf";
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+[COP, "init", {
+    diag_log "COP Init";
+    _this execVM "scripts\build\ConvertCOP.sqf";
+    _this execVM "scripts\build\ActivateBuild.sqf"
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+[COPTransit, "init", {
+    diag_log "COPTransit Init";
+    _this execVM "scripts\build\ConvertCOPTransit.sqf";
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
 objectInits = [
 
     // Add helipads to zeus, as they can't be recycled after built
