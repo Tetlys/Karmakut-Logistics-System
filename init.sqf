@@ -33,4 +33,3 @@ diag_log "init.sqf INIT";
     private _return = (count COPs) < MAX_COPS;
     _return
 }] call acex_fortify_fnc_addDeployHandler;
-

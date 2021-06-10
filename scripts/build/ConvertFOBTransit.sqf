@@ -1,8 +1,7 @@
 params ["_vehicle"];
 
 
-
-diag_log format ["ConvertFOBTransit Vehicle %1", typeOf _vehicle];
+// TODO: Prevent people without perms getting this action added?
 
 _vehicle addAction [ "Convert FOB" , {
     params ["_target", "_caller", "_actionId", "_arguments"];
