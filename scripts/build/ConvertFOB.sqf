@@ -1,15 +1,17 @@
 params ["_building"];
-if (profileNamespace getVariable str getpos _building)  == 0 then {
-
+// if (profileNamespace getVariable str getpos _building)  == 0 then {
+if ( true ) then {
      _building addAction [ "Convert FOB" , {
+        params ["_target", "_caller", "_actionId", "_arguments"];
+        
+        private _vehiclePos = getPos _target;
+        deleteVehicle _target;
 
-        profileNamespace setVariable [str getpos _building ,  nil ]; // Sets new Variable
+        private _newFOBTransit = FOBTransit createVehicle (_vehiclePos);
 
-        deleteVehicle _building;
+        _newFOBTransit execVM "scripts\build\ConvertFOBTransit.sqf";
 
-        FOBTransit createVehicle (getpos _building);
-
-        FOBs = FOBs - (getpos _building);
+        FOBs = FOBs - [str _vehiclePos];
 
         }
     ];
