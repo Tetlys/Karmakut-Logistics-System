@@ -7,10 +7,11 @@ _vehicle addAction [ "Convert COP" , {
     deleteVehicle _target;
 
     private _newCOP = COP createVehicle (_vehiclePos);
-
+    
+    COPs pushback (str _vehiclePos);
+    
     _newCOP execVM "scripts\build\ConvertCOP.sqf";
 
-    COPs pushback (str _vehiclePos);
 
     }
 ];

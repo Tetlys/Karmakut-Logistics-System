@@ -15,8 +15,6 @@ if ( true ) then {
 
         private _newFOBTransit = FOBTransit createVehicle (_vehiclePos);
 
-        _newFOBTransit execVM "scripts\build\ConvertFOBTransit.sqf";
-
         FOBs = FOBs - [str _vehiclePos];
 
         }

@@ -12,8 +12,6 @@ if ( true ) then {
 
         private _newCOPTransit = COPTransit createVehicle (_vehiclePos);
 
-        _newCOPTransit execVM "scripts\build\ConvertCOPTransit.sqf";
-
         COPs = COPs - [str _vehiclePos];
 
         }

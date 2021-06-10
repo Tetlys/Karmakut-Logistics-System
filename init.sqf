@@ -33,3 +33,20 @@ diag_log "init.sqf INIT";
     private _return = (count COPs) < MAX_COPS;
     _return
 }] call acex_fortify_fnc_addDeployHandler;
+
+
+
+diag_log format ["COP Type %1 FOB Type %2", COP, FOB];
+
+private _centerOfWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+private _objectsNear = nearestObjects[_centerOfWorld, [COP, FOB], 20000];
+{
+
+  if ( typeOf _x == FOB ) then {  
+    _x execVM "scripts\build\ConvertFOB.sqf";
+  } else {
+    if (typeOf _x == COP ) then {
+      _x execVM "scripts\build\ConvertCOP.sqf";
+    }
+  }
+} forEach _objectsNear;

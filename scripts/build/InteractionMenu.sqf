@@ -1,7 +1,7 @@
 
 // Who can use build menu
 _condition = {
-    getPlayerUID _Player in BUILD_PERMS
+    getPlayerUID _Player in BUILD_PERMS && "ACE_Fortify" in ((vestItems player) + (uniformItems player) + (backpackItems player))
 };
 
 //Master Menu
