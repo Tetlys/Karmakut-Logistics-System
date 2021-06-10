@@ -2,13 +2,13 @@ params ["_vehicle"];
 
 _vehicle addAction [ "Convert FOB" , {
 
-    profileNamespace setVariable ["_vehicle getpos" ,  0 ]; // Sets new Variable
+    missionNamespace setVariable [str getpos _vehicle, 0]; // Sets new Variable
 
     deleteVehicle _vehicle;
 
     FOB createVehicle (getpos _vehicle);
 
-    FOBs pushback (getpos _vehicle);
+    FOBs pushback (str getpos _vehicle);
 
     }
 ];

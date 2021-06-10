@@ -1,5 +1,7 @@
 params ["_buildings"];
 
+diag_log "ActivateBuild.sqf";
+
 _AddItems = player addItem "ACE_Fortify"; //Adds ability to fortify
 
 _BuildPoint = getPos player nearestObject [FOB,COP]; // Gets location of nearest build point to the player

@@ -9,9 +9,14 @@ if (isNil "objectInitsCache") then {objectInitsCache = createSimpleObject ["a3\w
 
 private _elements = objectInitsCache getVariable typeOf _object;
 
+// TODO: This file doesn't run, literally doesn't get referenced once
+diag_log "fn_addObjectInit.sqf RUN";
+
 // Find and cache matching objectInits
 if (isNil "_elements") then {
     _elements = objectInits select {
+
+        diag_log format ["Object Inits element loop %1", typeOf _x];
         _x params ["_classes", "", ["_inheritance", false]];
 
         if (_inheritance) then {
