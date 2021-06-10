@@ -1,3 +1,5 @@
+params ["_vehicle", "_Building"];
+
 objectInits = [
 
     // Add helipads to zeus, as they can't be recycled after built
@@ -7,122 +9,50 @@ objectInits = [
         true
     ],
 
+    // Enables convert vehicle option
+
     [
         [FOBTransit],
         {
-        		_this addAction [ "Convert FOB" , {
-
-        		    profileNamespace setVariable [str (_this getpos) ,  0 ]; // Sets new Variable
-
-        		    deleteVehicle _this;
-
-        		    FOB createVehicle (_this getpos);
-
-        		    FOBs pushback (_this getpos);
-
-        		    }
-        		];
+        {[_this] execVM "scripts\build\ConvertFOBTransit.sqf";}
         }
     ],
 
     [
         [FOB],
         {
-            if (profileNamespace getVariable str (_this getpos) = 0)  then {
-
-        		_this addAction [ "Convert FOB" , {
-
-        		    profileNamespace setVariable [str (_this getpos) ,  nil ]; // Sets new Variable
-
-        		    deleteVehicle _this;
-
-        		    FOBTransit createVehicle (_this getpos);
-
-        		    FOBs = FOBs - (_this getpos);
-
-        		    }
-        	    ];
-            };
+        {[_this] execVM "scripts\build\ConvertFOB.sqf";}
         }
     ],
 
     [
         [COPTransit],
         {
-        		_this addAction [ "Convert COP" , {
-
-        		    profileNamespace setVariable [str (_this getpos) ,  0 ]; // Sets new Variable
-
-        		    deleteVehicle _this;
-
-        		    COP createVehicle (_this getpos);
-
-        		    COPs pushback (_this getpos);
-
-        		    }
-        		];
+        {[_this] execVM "scripts\build\ConvertCOPTransit.sqf";}
         }
     ],
 
     [
         [FOB],
         {
-            if (profileNamespace getVariable str (_this getpos) = 0)  then {
-
-        		_this addAction [ "Convert COP" , {
-
-        		    profileNamespace setVariable [str (_this getpos) ,  nil ]; // Sets new Variable
-
-        		    deleteVehicle _this;
-
-        		    COPTransit createVehicle (_this getpos);
-
-        		    COPs = COPs - (_this getpos);
-
-        		    }
-        	    ];
-            };
+        {[_this] execVM "scripts\build\ConvertCOP.sqf";}
         }
     ],
 
+    //Adds Activate Build option
 
-
-
-    //Adds fob object to the
     [
-        [FOB,COP],
+        [FOB],
         {
-        _this addAction [ "<t color='#FF0000'>Stop Building</t>" , {
-                      if ((_this select 1) in BUILD_PERMS) then {
-                          deleteVehicle _FortifyAllowed;
-                          _activated = 0; // removes one from activated
-                          if (isPlayer (_this select 1)) then {[removeItem "ACE_Fortify"];};
-                          profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
-                          saveProfileNamespace; // saves profile
-                      } else {
-                          hint "build is already active elsewhere";
-                      };
+        {[_this] execVM "scripts\build\ActivateBuild.sqf";}
         }
-
     ],
 
     [
-        [FOB,COP],
+        [COP],
         {
-          _this addAction ["<t color='#FF0000'>Activate Building</t>", { // Add activate building option
-              if ((_this select 1) in BUILD_PERMS) then {
-                  if ( _activated == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
-                      execVM _content; // Starts build trigger
-                      _activated = _activated + 1; // adds one to activated
-                      profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
-                      saveProfileNamespace; // saves profile
-                  } else {
-                  hint "build is already active elsewhere";
-                  };
-              };
-          }];
+        {[_this] execVM "scripts\build\ActivateBuild.sqf";}
         }
-
     ],
 
     // Add ACE variables to corresponding building types

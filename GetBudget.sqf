@@ -1,2 +1,2 @@
 
-BUDGET = missionNamespace getVariable (str (this getpos));
+BUDGET = missionNamespace getVariable str [getpos (nearestObject [Player, [FOB,COP]])];

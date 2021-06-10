@@ -7,10 +7,6 @@ COPs = [];
 //Budget Variable
 BUDGET = [];
 
-_content = preprocessFile "BuildTrigger.sqf"; // File path for Start build system
-_activated = profileNamespace getVariable "Activated"; // Calls for number of activated build stations (Max 1)
-
-
 Arsenal_typename = "B_supplyCrate_F";
 
 
