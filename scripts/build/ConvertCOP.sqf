@@ -1,8 +1,7 @@
 params ["_building"];
-
-// TODO: Fix this conditional
-if ( true ) then {
-    
+_BUDGETPOS = _building getVariable "Budget";
+if ( _BUDGETPOS < 1) then {
+    sleep 30;
      _building addAction [ "Convert COP" , {
         params ["_target", "_caller", "_actionId", "_arguments"];
 

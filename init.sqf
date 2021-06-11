@@ -5,7 +5,9 @@
 [] call compileFinal preprocessFileLineNumbers "scripts\server\init_server.sqf";
 [] call compileFinal preprocessFileLineNumbers "scripts\build\InteractionMenu.sqf";
 
-BUDGET = 5000;
+BUDGET = 0;
+
+_activated = 0;
 
 
 diag_log "init.sqf INIT";

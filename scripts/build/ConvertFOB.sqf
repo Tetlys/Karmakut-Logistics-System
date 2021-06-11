@@ -1,12 +1,7 @@
 params ["_building"];
-// if (profileNamespace getVariable str getpos _building)  == 0 then {
-
-
-diag_log format ["Player UID ConvertFOB %1", getPlayerUID player];
-
-// TODO: Prevent people without perms getting this action added?
-// TODO: Fix this conditional
-if ( true ) then {
+_BUDGETPOS = _building getVariable "Budget";
+if ( _BUDGETPOS < 1) then {
+    sleep 30;
     _building addAction [ "Convert FOB" , {
         params ["_target", "_caller", "_actionId", "_arguments"];
         

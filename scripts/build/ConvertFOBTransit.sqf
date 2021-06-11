@@ -1,26 +1,20 @@
 params ["_vehicle"];
-
-
-// TODO: Prevent people without perms getting this action added?
+sleep 30;
 
 _vehicle addAction [ "Convert FOB" , {
     params ["_target", "_caller", "_actionId", "_arguments"];
-
-
-    diag_log format ["ConvertFOBTransit Action Vehicle Cache Type", typeOf _target];
-
     private _vehiclePos = getPos _target;
 
     deleteVehicle _target;
 
     private _newFOB = FOB createVehicle (_vehiclePos);
 
+    _newFOB setVariable ["Budget", 0];
+
     FOBs pushback (str _vehiclePos);
 
     _newFOB execVM "scripts\build\ConvertFOB.sqf";
-
-
-  
+    _newFOB execVM "scripts\build\ActivateBuild.sqf";
 
     }
 ];
