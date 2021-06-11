@@ -108,7 +108,9 @@ Resource_Cap_Factory = 5;
 Small_Barrel_Chance = 75;
 
 //buildings in which supplies will spawn
-Factory_Buildings = ["Land_i_Shed_Ind_F"];
+Factory_Building= "Land_i_Shed_Ind_F";
+
+BUILD_RANGE = 250;
 
 MAX_FOBS = 5;
 MAX_COPS = 10;
@@ -143,7 +145,8 @@ Sandbags = [
   ["Land_BagFence_End_F", 100],
   ["Land_BagFence_Long_F", 100],
   ["Land_BagFence_Round_F", 100],
-  ["Land_BagFence_Short_F", 100]
+  ["Land_BagFence_Short_F", 100],
+  ["Land_Plank_01_4m_F",100]
 ];
 HbarrierWall = [
   ["Land_HBarrierWall_corridor_F", 100],

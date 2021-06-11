@@ -3,8 +3,7 @@ params ["_vehicle", "_Building"];
 
 diag_log "objectInits.sqf INIT";
 
-// TODO: For other vehicles?
-// NOTE: Doesn't work for buildings??
+
 [FOB, "init", {
     diag_log "FOB Init";
     _this execVM "scripts\build\ConvertFOB.sqf";
@@ -27,6 +26,8 @@ diag_log "objectInits.sqf INIT";
     diag_log "COPTransit Init";
     _this execVM "scripts\build\ConvertCOPTransit.sqf";
 }, true, [], true] call CBA_fnc_addClassEventHandler;
+
+
 
 objectInits = [
 
@@ -157,6 +158,12 @@ objectInits = [
     ],
     [
         [ace_canCarry],
-        {[_this, true, [0, 1.5, 0], 0] remoteExec ["ace_dragging_fnc_setCarryable"];}
+        {[_this, true, [0, 1.5, 0], 0] call ["ace_dragging_fnc_setCarryable"];}
+    ],
+    [
+        [ace_canDrag],
+        {[_this, true, [0, 1.5, 0], 0] call ["ace_dragging_fnc_setDraggable"];}
     ]
 ];
+
+

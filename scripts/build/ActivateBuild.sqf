@@ -1,46 +1,67 @@
 params ["_building"];
 
-_AddItems = player addItem "ACE_Fortify"; //Adds ability to fortify
+    if (true) then {
+        _building addAction [
+            "<t color='#FF0000'>Activate Building</t>", {
+                if ( ACTIVATED == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
+                    params ["_target", "_caller", "_actionId", "_arguments"];
+                    ACTIVATED = ACTIVATED + 1;
+                    hint "Building Activated";
+                    private _var = _target getVariable "budget";
+                    if (isNil "_var") then
+                        {
+                    	    _target setVariable ["budget", 500];
+                    	    _var = 500;
+                        };
+                    diag_log format ["Loaded FOB Budget %1", _var];
+                    BUDGET = _var;
+                    [west, BUDGET, false] call acex_fortify_fnc_updateBudget;
+                    [west, BUDGET, ResourceExchange] call acex_fortify_fnc_registerObjects;
+                    {_x enableSimulationGlobal false; _x allowDamage false;} foreach nearestObjects [_target, ["Air", "LandVehicle"], BUILD_RANGE] ;
+                    _trg = createTrigger ["EmptyDetector", getPos _target, true];
+                    _trg setTriggerArea [BUILD_RANGE, BUILD_RANGE, 0, false];
+                    _trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+                    _trg setTriggerStatements [ "this" , "Player addItem 'ACE_FORTIFY'", "Player removeItem 'ACE_FORTIFY'"];
 
-_BuildPoint = getPos _this; // Gets location of nearest build point to the player
+                    sleep 1;
+                    _target removeAction _actionId;
+                    if (ACTIVATED == 1) then {
+                        _target  addAction [
+                            "<t color='#FF0000'>De-Activate Building</t>", {
+                                if !( ACTIVATED < 1 ) then {
+                                    params ["_target", "_caller", "_actionId", "_arguments"];
 
-_RemoveItems = player removeItem "ACE_Fortify"; // Removes ability to fortify
+                                    hint "Building De-Activated!";
 
-_activated = profileNamespace getVariable "Activated"; // Calls for number of activated build stations (Max 1)
+                                    //REMOVE TRIGGER
+                                    _trg = _this select 3 select 0;
+                                    deleteVehicle _trg;
 
-  _building addAction ["<t color='#FF0000'>Activate Building</t>", { // Add activate building option
-      if ((_this select 1) in BUILD_PERMS) then {
-          if ( _activated == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
-                _FortifyAllowed = createTrigger ["EmptyDetector", _BuildPoint];
-                _FortifyAllowed setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-                _FortifyAllowed setTriggerArea [250, 250, getDir this, true];
-                _FortifyAllowed setTriggerStatements [
-                "this", "[hint 'Building Activated'; _addItems]", "[hint 'Building Activated'; _RemoveItems]"
-                ];
-          };
+                                    BUDGET = [west] call acex_fortify_fnc_getBudget;
+
+                                    _target setVariable ["budget", BUDGET, true];
+
+                                    BUDGET = 0;
+
+                                    {_x enableSimulationGlobal true; _x allowDamage true;} foreach nearestObjects [_target, ["Air", "LandVehicle"], BUILD_RANGE];
+
+                                    ACTIVATED = ACTIVATED - 1; // removes one from activated
+                                    _target removeAction _actionId;
+                                    _target execVM "scripts\build\ActivateBuild.sqf";
+
+                                    {player RemoveItem "ACE_FORTIFY"} foreach allplayers;
+                                };
+                            } , [_trg]
+                        ];
+                    };
+                } else {
+                hint "Building active somwhere else!"
+                };
+            }
+        ];
+    sleep 10;
+    };
 
 
-              _this getVariable "Budget"
-              _activated = _activated + 1; // adds one to activated
-              profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
-              saveProfileNamespace; // saves profile
-          } else {
-            hint "build is already active elsewhere";
-          };
-      };
-  }];
-
-_building addAction [ "<t color='#FF0000'>Stop Building</t>" , {
-    if ((_this select 1) in BUILD_PERMS) then {
-          deleteVehicle _FortifyAllowed;
-          _activated = 0; // removes one from activated
-          if (isPlayer (_this select 1)) then {[removeItem "ACE_Fortify"];};
-          profileNamespace setVariable ["Activated", _activated]; // Sets new Variable
-          saveProfileNamespace; // saves profile
-        } else {
-          hint "build is already active elsewhere";
-      };
-    }
-];
 
 

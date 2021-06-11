@@ -1,5 +1,5 @@
 params ["_vehicle"];
-sleep 30;
+sleep 5;
 
 _vehicle addAction [ "Convert FOB" , {
     params ["_target", "_caller", "_actionId", "_arguments"];
@@ -9,9 +9,7 @@ _vehicle addAction [ "Convert FOB" , {
 
     private _newFOB = FOB createVehicle (_vehiclePos);
 
-    _newFOB setVariable ["Budget", 0];
-
-    FOBs pushback (str _vehiclePos);
+    _newFOB setVariable ["Budget", 500, true];
 
     _newFOB execVM "scripts\build\ConvertFOB.sqf";
     _newFOB execVM "scripts\build\ActivateBuild.sqf";

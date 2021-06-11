@@ -1,30 +1,35 @@
 waitUntil { time > 0 }; // Wait until mission fully started
-private _factories = nearestObjects [[0,0,0], Factory_Buildings, 50000]; //get all factories
+private _factories = [0,0,0] nearObjects [Factory_Building, 50000]; //get all factories
 private _resourcesPerFactory = createHashMap;
 
 {
- _resourcesPerFactory set [str (getPos _x), count (nearestObjects [_x, [Small_Barrel, Bigger_Barrel], 200])];
+ private _count = count (getPos _x nearObjects [Small_Barrel, 200]);
+ _count = _count + count (getPos _x nearObjects [Bigger_Barrel, 200]);
+ if (_count == 0) then {
+    _resourcesPerFactory set [getPos _x, 0];
+ } else {
+    _resourcesPerFactory set [getPos _x, _count];
+ };
+
 } forEach _factories;
 
 while {true} do {
   {
-    private _resourceAtX = _resourcesPerFactory get (str (getPos _x));
-
-    if{!isNumber(_resourceAtX) then {
-      _resourceAtX = 0;
-    }
-
-    if (_resourceAtX < resource_cap_factory) then {   // if factory has less than 5 barrels
-      private _barrel = nil;
-      if (random [1,50,100] <= Small_Barrel_Chance) then { // chance of spawn of type of supplies. big or small
-        _barrel = createVehicle [Small_Barrel, getPos _x, [], 0, "NONE"];
-        _barrel setMass 125;
-      } else {
-        _barrel = createVehicle [Bigger_Barrel, getPos _x, [], 0, "NONE"];
-        _barrel setMass 500;
+      if ((_resourcesPerFactory get getPos _x) < Resource_Cap_Factory) then {   // if factory has less than 5 barrels
+          private _barrel = nil;
+          if (random [1,50,100] <= Small_Barrel_Chance) then { // chance of spawn of type of supplies. big or small
+            _barrel = createVehicle [Small_Barrel, getpos _x, [], 0, "NONE"];
+            _barrel setMass 125;
+            sleep 5;
+            _barrel addAction ["Sell Small Resources","scripts\build\SellResourcesSmall.sqf"];
+          } else {
+            _barrel = createVehicle [Bigger_Barrel, getpos _x, [], 0, "NONE"];
+            _barrel setMass 500;
+            sleep 5;
+            _barrel addAction ["Sell Large Resources","scripts\build\SellResourcesBig.sqf"];
+          };
+          _resourcesPerFactory set [getPos _x, (_resourcesPerFactory get (getPos _x)) + 1]; // update the number of resources in the factory
       };
-      _resourcesPerFactory set [str getPos _x, _resourceAtX + 1]; // update the number of resources in the factory
-    };
   } forEach _factories;
-  sleep 3600; // wait 60 minutes until next spawn of supplies
-};
+  sleep 1800; // wait 30 minutes until next spawn of supplies
+};a

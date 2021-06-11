@@ -1,7 +1,12 @@
 params ["_building"];
-_BUDGETPOS = _building getVariable "Budget";
-if ( _BUDGETPOS < 1) then {
-    sleep 30;
+private _var = _building getVariable "budget";
+if (isNil "_var") then
+{
+	_object setVariable ["budget", 500];
+	_var = 500;
+};
+if ( _var < 10) then {
+    sleep 5;
      _building addAction [ "Convert COP" , {
         params ["_target", "_caller", "_actionId", "_arguments"];
 
@@ -10,8 +15,6 @@ if ( _BUDGETPOS < 1) then {
         deleteVehicle _target;
 
         private _newCOPTransit = COPTransit createVehicle (_vehiclePos);
-
-        COPs = COPs - [str _vehiclePos];
 
         }
     ];

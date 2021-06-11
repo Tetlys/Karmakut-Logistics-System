@@ -5,9 +5,7 @@
 [] call compileFinal preprocessFileLineNumbers "scripts\server\init_server.sqf";
 [] call compileFinal preprocessFileLineNumbers "scripts\build\InteractionMenu.sqf";
 
-BUDGET = 0;
-
-_activated = 0;
+ACTIVATED = 0;
 
 
 diag_log "init.sqf INIT";
@@ -35,6 +33,8 @@ diag_log "init.sqf INIT";
     private _return = (count COPs) < MAX_COPS;
     _return
 }] call acex_fortify_fnc_addDeployHandler;
+
+
 
 
 
