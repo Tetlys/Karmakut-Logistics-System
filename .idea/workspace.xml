@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bea536e-c520-4eab-b16d-d594c81e0f54" name="Default Changelist" comment="" />
+    <list default="true" id="5bea536e-c520-4eab-b16d-d594c81e0f54" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlobalVariables.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalVariables.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configFile.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/configFile.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/init.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission.sqm" beforeDir="false" afterPath="$PROJECT_DIR$/mission.sqm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onPlayerRespawn.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/onPlayerRespawn.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/ActivateBuild.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/ActivateBuild.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/ConvertCOP.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/ConvertCOP.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/ConvertCOPTransit.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/ConvertCOPTransit.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/ConvertFOB.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/ConvertFOB.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/ConvertFOBTransit.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/ConvertFOBTransit.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/InteractionMenu.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/InteractionMenu.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/SellResourcesBig.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/SellResourcesBig.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build/SellResourcesSmall.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build/SellResourcesSmall.sqf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/server/manage_factory.sqf" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/server/manage_factory.sqf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

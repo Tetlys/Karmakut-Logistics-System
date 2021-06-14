@@ -1,6 +1,6 @@
 params ["_building"];
 
-    if (true) then {
+
         _building addAction [
             "<t color='#FF0000'>Activate Building</t>", {
                 if ( ACTIVATED == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
@@ -17,12 +17,10 @@ params ["_building"];
                     BUDGET = _var;
                     [west, BUDGET, false] call acex_fortify_fnc_updateBudget;
                     [west, BUDGET, ResourceExchange] call acex_fortify_fnc_registerObjects;
-                    {_x enableSimulationGlobal false; _x allowDamage false;} foreach nearestObjects [_target, ["Air", "LandVehicle"], BUILD_RANGE] ;
                     _trg = createTrigger ["EmptyDetector", getPos _target, true];
                     _trg setTriggerArea [BUILD_RANGE, BUILD_RANGE, 0, false];
                     _trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
                     _trg setTriggerStatements [ "this" , "Player addItem 'ACE_FORTIFY'", "Player removeItem 'ACE_FORTIFY'"];
-
                     sleep 1;
                     _target removeAction _actionId;
                     if (ACTIVATED == 1) then {
@@ -43,7 +41,7 @@ params ["_building"];
 
                                     BUDGET = 0;
 
-                                    {_x enableSimulationGlobal true; _x allowDamage true;} foreach nearestObjects [_target, ["Air", "LandVehicle"], BUILD_RANGE];
+                                    {_x allowDamage true; _x enablesimulationGlobal true; } foreach nearestObjects [_target, ["ALL"], BUILD_RANGE];
 
                                     ACTIVATED = ACTIVATED - 1; // removes one from activated
                                     _target removeAction _actionId;
@@ -60,7 +58,6 @@ params ["_building"];
             }
         ];
     sleep 10;
-    };
 
 
 

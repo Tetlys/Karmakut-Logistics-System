@@ -5,6 +5,8 @@ _vehicle addAction [ "Convert FOB" , {
     params ["_target", "_caller", "_actionId", "_arguments"];
     private _vehiclePos = getPos _target;
 
+    //TODO: Needs to attach marker to FOB and create teleport point
+
     deleteVehicle _target;
 
     private _newFOB = FOB createVehicle (_vehiclePos);

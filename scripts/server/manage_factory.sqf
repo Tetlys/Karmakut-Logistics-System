@@ -13,6 +13,9 @@ private _resourcesPerFactory = createHashMap;
 
 } forEach _factories;
 
+
+// TODO: Nweed to attach a map marker to each factory!
+
 while {true} do {
   {
       if ((_resourcesPerFactory get getPos _x) < Resource_Cap_Factory) then {   // if factory has less than 5 barrels
@@ -22,14 +25,16 @@ while {true} do {
             _barrel setMass 125;
             sleep 5;
             _barrel addAction ["Sell Small Resources","scripts\build\SellResourcesSmall.sqf"];
+            [_barrel, 2] call ace_cargo_fnc_setSize;
           } else {
             _barrel = createVehicle [Bigger_Barrel, getpos _x, [], 0, "NONE"];
             _barrel setMass 500;
             sleep 5;
             _barrel addAction ["Sell Large Resources","scripts\build\SellResourcesBig.sqf"];
+            [_barrel, 4] call ace_cargo_fnc_setSize;
           };
           _resourcesPerFactory set [getPos _x, (_resourcesPerFactory get (getPos _x)) + 1]; // update the number of resources in the factory
       };
   } forEach _factories;
-  sleep 1800; // wait 30 minutes until next spawn of supplies
-};a
+  sleep 900; // wait 15 minutes until next spawn of supplies
+};
