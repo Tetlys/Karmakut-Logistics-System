@@ -3,7 +3,8 @@
 
 // Who can use build menu
 _condition = {
-    getPlayerUID _Player in BUILD_PERMS && "ACE_Fortify" in ((vestItems _x) + (uniformItems _x) + (backpackItems _x))
+    params ["_target", "_player", "_params"];
+    getPlayerUID _player in BUILD_PERMS && "ACE_Fortify" in ((vestItems _player) + (uniformItems _player) + (backpackItems _player))
 };
 
 

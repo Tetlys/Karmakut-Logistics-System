@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6;
+		nextID=8;
 	};
 	class Camera
 	{
-		pos[]={1747.3033,59.845135,2318.5745};
-		dir[]={-0.73589164,-0.6409862,0.21817504};
-		up[]={-0.61454612,0.76755244,0.18219888};
-		aside[]={0.28424776,-1.4901161e-008,0.95875102};
+		pos[]={2055.3408,89.665016,2249.0654};
+		dir[]={-0.89790374,-0.40690956,0.1679337};
+		up[]={-0.39997768,0.91346782,0.07480748};
+		aside[]={0.18384254,-1.2452801e-008,0.98296082};
 	};
 };
 binarizationWanted=0;
-sourceName="FortifyPlayTest3";
+sourceName="logi";
 addons[]=
 {
 	"rhsusf_c_fmtv",

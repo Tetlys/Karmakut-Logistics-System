@@ -14,7 +14,7 @@ _vehicle addAction [ "Convert FOB" , {
     _newFOB setVariable ["Budget", 500, true];
 
     _newFOB execVM "scripts\build\ConvertFOB.sqf";
-    _newFOB execVM "scripts\build\ActivateBuild.sqf";
+    // _newFOB execVM "scripts\build\client\AddBuildActions.sqf";
 
     }
 ];
