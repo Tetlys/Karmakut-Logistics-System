@@ -39,12 +39,12 @@ OnBuildActivateRequest = {
     BUILDING_TRIGGER = createTrigger ["EmptyDetector", getPos _building, true];
     BUILDING_TRIGGER setTriggerArea [BUILD_RANGE, BUILD_RANGE, 0, false, BUILD_RANGE];
     BUILDING_TRIGGER setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-    BUILDING_TRIGGER setTriggerStatements [ "this" , "diag_log format ['Triggered %1', thisList ]; { _x addItem 'ACE_FORTIFY'; 'Entered the build area' remoteExec ['hint', owner _x]; } forEach thisList;", ""];
+    BUILDING_TRIGGER setTriggerStatements ["{ _x addItem 'ACE_FORTIFY'; 'Entered the build area' remoteExec ['hint', owner _x]; } forEach thisList;", ""];
 
     BUILDING_LEAVE_TRIGGER = createTrigger ["EmptyDetector", getPos _building, true];
     BUILDING_LEAVE_TRIGGER setTriggerArea [BUILD_RANGE + 1, BUILD_RANGE + 1, 0, false, BUILD_RANGE];
     BUILDING_LEAVE_TRIGGER setTriggerActivation ["ANYPLAYER", "NOT PRESENT", true];
-    BUILDING_LEAVE_TRIGGER setTriggerStatements [ "this", "diag_log format ['Left %1', thisList]; {_x removeItem 'ACE_FORTIFY'; 'Left the build area' remoteExec ['hint', owner _x];  } forEach thisList; ", ""];
+    BUILDING_LEAVE_TRIGGER setTriggerStatements [ "{_x removeItem 'ACE_FORTIFY'; 'Left the build area' remoteExec ['hint', owner _x];  } forEach thisList; ", ""];
 
 
     diag_log format ["Triggers [%1, %2]", BUILDING_TRIGGER, BUILDING_LEAVE_TRIGGER];
