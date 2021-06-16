@@ -39,12 +39,13 @@ OnBuildActivateRequest = {
     BUILDING_TRIGGER = createTrigger ["EmptyDetector", getPos _building, true];
     BUILDING_TRIGGER setTriggerArea [BUILD_RANGE, BUILD_RANGE, 0, false, BUILD_RANGE];
     BUILDING_TRIGGER setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-    BUILDING_TRIGGER setTriggerStatements ["this", "{ _x addItem 'ACE_FORTIFY'; 'Entered the build area' remoteExec ['hint', owner _x]; } forEach thisList;", ""];
+    BUILDING_TRIGGER setTriggerStatements ["this", "diag_Log format ['Player that have entered are %1', thisList]; { _x addItem 'ACE_FORTIFY'; 'Entered the build area' remoteExec ['hint', owner _x]; } forEach thisList;", "_triggerList = list BUILDING_LEAVE_TRIGGER; diag_log format ['Players that have left are %1', _triggerList]; { _x removeItem 'ACE_FORTIFY'; 'Left the build area' remoteExec ['hint', owner _x]; } forEach _triggerList;"];
 
+    // NOTE: This doesn't return list of entities as thisList.
+    // Instead can just use list BUILDING_LEAVE_TRIGGER in the deactivation statement to get them.. ???
     BUILDING_LEAVE_TRIGGER = createTrigger ["EmptyDetector", getPos _building, true];
-    BUILDING_LEAVE_TRIGGER setTriggerArea [BUILD_RANGE + 1, BUILD_RANGE + 1, 0, false, BUILD_RANGE];
+    BUILDING_LEAVE_TRIGGER setTriggerArea [BUILD_RANGE, BUILD_RANGE, 0, false, BUILD_RANGE];
     BUILDING_LEAVE_TRIGGER setTriggerActivation ["ANYPLAYER", "NOT PRESENT", true];
-    BUILDING_LEAVE_TRIGGER setTriggerStatements ["this", "{_x removeItem 'ACE_FORTIFY'; 'Left the build area' remoteExec ['hint', owner _x];  } forEach thisList;", ""];
 
 
     diag_log format ["Triggers [%1, %2]", BUILDING_TRIGGER, BUILDING_LEAVE_TRIGGER];

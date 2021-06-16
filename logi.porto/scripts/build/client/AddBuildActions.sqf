@@ -12,7 +12,7 @@ _building addAction [
 
 			
 		} else {
-		hint "Building active somwhere else!"
+		hint "Building active somewhere else!"
 		};
 	},
 	_building,
