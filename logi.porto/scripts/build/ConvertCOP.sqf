@@ -10,11 +10,11 @@ if ( _var < 100) then {
      _building addAction [ "Convert COP" , {
         params ["_target", "_caller", "_actionId", "_arguments"];
 
-        private _vehiclePos = getPos _target;
+            private _vehiclePos = getPos _target;
 
-        deleteVehicle _target;
+            deleteVehicle _target;
 
-        private _newCOPTransit = COPTransit createVehicle (_vehiclePos);
+            private _newCOPTransit = COPTransit createVehicle (_vehiclePos);
 
         }
     ];

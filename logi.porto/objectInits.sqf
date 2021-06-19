@@ -7,7 +7,7 @@ diag_log "objectInits.sqf INIT";
 [FOB, "init", {
     diag_log "FOB Init";
     _this execVM "scripts\build\ConvertFOB.sqf";
-    _this execVM "scripts\build\ActivateBuild.sqf"
+    _this execVM "scripts\build\client\AddBuildActions.sqf"
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 
@@ -19,7 +19,7 @@ diag_log "objectInits.sqf INIT";
 [COP, "init", {
     diag_log "COP Init";
     _this execVM "scripts\build\ConvertCOP.sqf";
-    _this execVM "scripts\build\ActivateBuild.sqf"
+    _this execVM "scripts\build\client\AddBuildActions.sqf"
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 [COPTransit, "init", {
@@ -73,14 +73,14 @@ objectInits = [
     [
         [FOB],
         {
-        {[_this] execVM "scripts\build\ActivateBuild.sqf";}
+        {[_this] execVM "scripts\build\client\AddBuildActions.sqf";}
         }
     ],
 
     [
         [COP],
         {
-        {[_this] execVM "scripts\build\ActivateBuild.sqf";}
+        {[_this] execVM "scripts\build\client\AddBuildActions.sqf";}
         }
     ],
 
