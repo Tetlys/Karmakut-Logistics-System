@@ -19,7 +19,7 @@ _buildMenu = {};
                 [_x, 1, ["ACE_SelfActions", "BuildMenu"], _Menu2] call ace_interact_menu_fnc_addActionToObject;
             //Sandbag Small
                 _COPsandbagwall = {
-                    [west, BUDGET, Sandbags] call acex_fortify_fnc_registerObjects;
+                    [player, Sandbags] remoteExec ["OnPresetChangeRequest", 2];
                 };
                     _Menu12 = ["COPSandBagWall", "Sandbag Walls", BUDGET, _COPsandbagwall, _condition] call ace_interact_menu_fnc_createAction;
                     [_x, 1, ["ACE_SelfActions", "BuildMenu", "COPMenu"], _Menu12] call ace_interact_menu_fnc_addActionToObject;
