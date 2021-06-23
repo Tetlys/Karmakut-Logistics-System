@@ -6,4 +6,5 @@ if (isServer) then {
 } else {
 	[] call compileFinal preprocessFileLineNumbers "scripts\build\client\OnBuildActivated.sqf";
 	[] call compileFinal preprocessFileLineNumbers "scripts\build\client\OnBuildDeactivated.sqf";
+	[] call compileFinal preprocessFileLineNumbers "scripts\build\client\OnPresetChangeResponse.sqf";
 };	
