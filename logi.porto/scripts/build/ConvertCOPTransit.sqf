@@ -1,4 +1,6 @@
 params ["_vehicle"];
+
+diag_log format ["ConvertCOPTransit.sqf %1", _vehicle];
 sleep 5;
 
 _vehicle addAction [ "Convert COP" , {
