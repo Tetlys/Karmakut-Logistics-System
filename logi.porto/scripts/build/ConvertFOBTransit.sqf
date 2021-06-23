@@ -1,4 +1,5 @@
 params ["_vehicle"];
+diag_log format ["ConvertFOBTransit.sqf %1", _vehicle];
 sleep 5;
 
 _vehicle addAction [ "Convert FOB" , {

@@ -1,5 +1,7 @@
 params ["_building"];
 
+diag_log format ["Adding Build Actions to %1", _building];
+
 _building addAction [
 	"<t color='#FF0000'>Activate Building</t>", {
 		if ( ACTIVATED == 0 ) then {  // If less than 1 active, Run script, add one to profile name space
