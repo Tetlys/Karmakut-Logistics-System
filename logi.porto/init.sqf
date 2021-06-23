@@ -13,6 +13,21 @@ ACTIVATED_BUILDING = objNull;
 
 diag_log "init.sqf INIT";
 
+_closestCOPs = nearestObjects [[worldSize / 2, worldSize / 2, 0], [COP], worldSize, true];
+_closestFOBs = nearestObjects [[worldSize / 2, worldSize / 2, 0], [FOB], worldSize, true];
+
+{
+    diag_log format ["Detected existing COP Structure %1", _x];
+    _x execVM "scripts\build\ConvertCOP.sqf";
+    _x execVM "scripts\build\client\AddBuildActions.sqf";
+} forEach _closestCOPs;
+{
+    diag_log format ["Detected existing FOB Structure %1", _x];
+    _x execVM "scripts\build\ConvertFOB.sqf";
+    _x execVM "scripts\build\client\AddBuildActions.sqf";
+} forEach _closestFOBs;
+
+
 ["acex_fortify_objectPlaced", {
   params ["_player", "_side", "_objectPlaced"];
   [ALiVE_SYS_LOGISTICS,"updateObject",[_objectPlaced]] call ALIVE_fnc_logistics;
