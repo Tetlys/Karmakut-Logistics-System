@@ -1,4 +1,6 @@
 params ["_building"];
+
+diag_log format ["ConvertFOB.sqf %1", _building];
 private _var = _building getVariable "budget";
 if (isNil "_var") then
 {
