@@ -3,16 +3,6 @@ params ["_vehicle", "_Building"];
 
 diag_log "objectInits.sqf INIT";
 
-{
-    diag_log format ["Detected existing COP Structure %1", _x];
-    _x execVM "scripts\build\ConvertCOP.sqf";
-    _x execVM "scripts\build\client\AddBuildActions.sqf";
-} forEach nearestObjects [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"), [COP], 15000, true];
-{
-    diag_log format ["Detected existing FOB Structure %1", _x];
-    _x execVM "scripts\build\ConvertFOB.sqf";
-    _x execVM "scripts\build\client\AddBuildActions.sqf";
-} forEach nearestOBjects [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"), [FOB], 15000, true];
 
 [FOB, "init", {
     diag_log "FOB Init";
