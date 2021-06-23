@@ -24,7 +24,8 @@ OnBuildDeactivateRequest = {
         "Can not de-activate building here" remoteExec ["hint", owner _requester];
 	};
 
-
+	diag_log format ["Setting budget to %1 for %2", BUDGET, ACTIVATED_BUILDING];
+	
 	ACTIVATED_BUILDING setVariable ["budget", BUDGET, true];
 	BUDGET = 0;
 
@@ -39,7 +40,7 @@ OnBuildDeactivateRequest = {
 	deleteVehicle BUILDING_LEAVE_TRIGGER;
 
 
-	[_building, _requester] remoteExec ["OnBuildDeactivated", -2];
+	[_building, _requester, BUDGET] remoteExec ["OnBuildDeactivated", -2];
 
 
 };

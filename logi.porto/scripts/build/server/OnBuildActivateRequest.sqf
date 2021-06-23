@@ -24,7 +24,8 @@ OnBuildActivateRequest = {
     private _var = _building getVariable "budget";
     if (isNil "_var") then
     {
-        _building setVariable ["budget", 500];
+        diag_log format ["Budget is not set for %1, setting to default", ACTIVATED_BUILDING];
+        _building setVariable ["budget", 500, true];
         _var = 500;
     };
 
