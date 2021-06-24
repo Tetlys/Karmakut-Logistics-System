@@ -12,6 +12,7 @@ player linkItem "ItemWatch";
 player linkItem "ItemRadio";
 
 
+// NOTE: Is outside of if case to handle some fucky case I guess
 _centerOfWorld = [worldSize / 2, worldSize / 2, 0];
 _closestCOPs = nearestObjects [_centerOfWorld, [COP], worldSize, true];
 _closestFOBs = nearestObjects [_centerOfWorld, [FOB], worldSize, true];
@@ -28,6 +29,7 @@ diag_log format ["Closest FOBs %1", _closestFOBs];
 	diag_log format ["Actions set is %1", _actionsSet];
 
 	if(!_actionsSet) then {
+		_x setVariable ["buildActionsSet", true];
 		_x execVM "scripts\build\ConvertCOP.sqf";
 		_x execVM "scripts\build\client\AddBuildActions.sqf";
 	};
@@ -40,6 +42,7 @@ diag_log format ["Closest FOBs %1", _closestFOBs];
 	diag_log format ["Actions set is %1", _actionsSet];
 
 	if(!_actionsSet) then {
+		_x setVariable ["buildActionsSet", true];
 		_x execVM "scripts\build\ConvertFOB.sqf";
 		_x execVM "scripts\build\client\AddBuildActions.sqf";
 	};
