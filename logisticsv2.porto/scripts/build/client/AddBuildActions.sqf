@@ -22,7 +22,7 @@ _building addAction [
 	true,
 	true,
 	"",
-	"((ACTIVATED == 0 || ACTIVATED_BUILDING != _target) && getPlayerUID _this in BUILD_PERMS)" // Show when activated is false, or if active but the building is not the current build
+	"((ACTIVATED == 0 ) && getPlayerUID _this in BUILD_PERMS)" // Show when activated is false, or if active but the building is not the current build
 ];
 
 _building addAction [
@@ -39,7 +39,7 @@ _building addAction [
 	true,
 	true,
 	"",
-	" ((ACTIVATED == 1 && ACTIVATED_BUILDING == _target) && getPlayerUID _this in BUILD_PERMS)"
+	"((ACTIVATED == 1) && getPlayerUID _this in BUILD_PERMS)"
 ];
 
 
