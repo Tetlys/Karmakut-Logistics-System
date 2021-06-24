@@ -1,5 +1,9 @@
 waitUntil {time > 0};
-[] call compileFinal preprocessFileLineNumbers "scripts\build\InteractionMenu.sqf";
+
+if ( !BUILD_INTERACTION_MENU_ADDED ) then {
+	[] call compileFinal preprocessFileLineNumbers "scripts\build\InteractionMenu.sqf";
+	BUILD_INTERACTION_MENU_ADDED = true;
+};
 
 
 player linkItem "ItemMap";
