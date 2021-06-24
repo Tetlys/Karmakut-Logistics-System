@@ -1,6 +1,6 @@
 waitUntil {time > 0};
 
-if ( !BUILD_INTERACTION_MENU_ADDED ) then {
+if ( isNil "BUILD_INTERACTION_MENU_ADDED" ) then {
 	[] call compileFinal preprocessFileLineNumbers "scripts\build\InteractionMenu.sqf";
 	BUILD_INTERACTION_MENU_ADDED = true;
 };
