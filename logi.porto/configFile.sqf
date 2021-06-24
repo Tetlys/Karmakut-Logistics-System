@@ -110,6 +110,9 @@ Small_Barrel_Chance = 75;
 //buildings in which supplies will spawn
 Factory_Building= "Land_i_Shed_Ind_F";
 
+//Time between resources spawning
+RESOURCETIMER = 900
+
 BUILD_RANGE = 20;
 
 MAX_FOBS = 5;

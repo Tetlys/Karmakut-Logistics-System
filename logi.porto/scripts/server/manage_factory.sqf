@@ -24,17 +24,17 @@ while {true} do {
             _barrel = createVehicle [Small_Barrel, getpos _x, [], 0, "NONE"];
             _barrel setMass 125;
             sleep 5;
-            _barrel addAction ["Sell Small Resources","scripts\build\SellResourcesSmall.sqf"];
+            _barrel addAction ["Deposit Resources","scripts\build\SellResourcesSmall.sqf"];
             [_barrel, 2] call ace_cargo_fnc_setSize;
           } else {
             _barrel = createVehicle [Bigger_Barrel, getpos _x, [], 0, "NONE"];
             _barrel setMass 500;
             sleep 5;
-            _barrel addAction ["Sell Large Resources","scripts\build\SellResourcesBig.sqf"];
+            _barrel addAction ["Deposit Resources","scripts\build\SellResourcesBig.sqf"];
             [_barrel, 4] call ace_cargo_fnc_setSize;
           };
           _resourcesPerFactory set [getPos _x, (_resourcesPerFactory get (getPos _x)) + 1]; // update the number of resources in the factory
       };
   } forEach _factories;
-  sleep 900; // wait 15 minutes until next spawn of supplies
+  sleep RESOURCETIMER; // wait 15 minutes until next spawn of supplies
 };

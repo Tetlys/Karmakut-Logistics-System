@@ -217,7 +217,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="FortifyPlayTest1";
+		briefingName="KarmaKut Logistics Test";
 		timeOfChanges=1800.0002;
 		startWeather=0.1;
 		startWind=0.1;
