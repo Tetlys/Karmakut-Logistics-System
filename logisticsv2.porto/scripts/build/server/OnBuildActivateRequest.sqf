@@ -42,7 +42,7 @@ OnBuildActivateRequest = {
     BUILDING_TRIGGER = createTrigger ["EmptyDetector", getPos _building, true];
     BUILDING_TRIGGER setTriggerArea [BUILD_RANGE, BUILD_RANGE, 0, false, BUILD_RANGE];
     BUILDING_TRIGGER setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-    BUILDING_TRIGGER setTriggerStatements ["this", "diag_Log format ['Player that have entered are %1', thisList]; { _x addItem 'ACE_FORTIFY'; [BUDGET, ACTIVATED_BUILDING, CURRENT_BUILD_LIST] remoteExec ['OnBuildRadiusEntered', -2]; } forEach thisList;", "_triggerList = list BUILDING_LEAVE_TRIGGER; diag_log format ['Players that have left are %1', _triggerList]; { _x removeItem 'ACE_FORTIFY'; [ACTIVATED_BUILDING] remoteExec ['OnBuildRadiusLeft', -2]; } forEach _triggerList;"];
+    BUILDING_TRIGGER setTriggerStatements ["this", "diag_Log format ['Player that have entered are %1', thisList]; { _x addItem 'ACE_FORTIFY'; [BUDGET, ACTIVATED_BUILDING, CURRENT_BUILD_LIST] remoteExec ['OnBuildRadiusEntered', owner _x]; } forEach thisList;", "_triggerList = list BUILDING_LEAVE_TRIGGER; diag_log format ['Players that have left are %1', _triggerList]; { _x removeItem 'ACE_FORTIFY'; [ACTIVATED_BUILDING] remoteExec ['OnBuildRadiusLeft', owner _x]; } forEach _triggerList;"];
 
     // NOTE: This doesn't return list of entities as thisList.
     // Instead can just use list BUILDING_LEAVE_TRIGGER in the deactivation statement to get them.. ???
