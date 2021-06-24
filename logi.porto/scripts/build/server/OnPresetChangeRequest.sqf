@@ -25,6 +25,8 @@ OnPresetChangeRequest = {
 
 	[west, BUDGET, _objectClassNames] call acex_fortify_fnc_registerObjects;
 
+	CURRENT_BUILD_LIST = _objectClassNames;
+
 	diag_log format ["Preset changed to contain %1, BUDGET of %2, SIDE west", _objectClassNames, BUDGET];
 
 
