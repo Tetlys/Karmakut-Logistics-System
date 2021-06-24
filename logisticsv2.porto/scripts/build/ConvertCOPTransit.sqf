@@ -15,8 +15,7 @@ _vehicle addAction [ "Convert COP" , {
 
     _newCOP setVariable ["Budget", 500, true];
     
-    _newCOP execVM "scripts\build\ConvertCOP.sqf";
-    _newCOP execVM "scripts\build\client\AddBuildActions.sqf";
+    [_newCOP, player] remoteExec ["OnCOPTransitConverted", 2];
 
     }
 ];
