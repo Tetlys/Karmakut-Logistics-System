@@ -28,7 +28,8 @@ onLoadMission = "karmakut.com";
 
 respawn = 3;
 respawnDelay = 3;
-respawnButton = 0;
+respawnButton = 1;
+respawnDialog = 0;
 
 
 /*
