@@ -39,7 +39,7 @@ diag_log "init.sqf INIT";
 
 ["acex_fortify_onDeployStart", {
   params ["_player", "_object", "_cost"];
-  _object enableSimulationGlobal false;
+  [_object, false] remoteExec ["enableSimulationGlobal", 2];
 }] call CBA_fnc_addEventHandler;
 
 ["acex_fortify_objectPlaced", {
