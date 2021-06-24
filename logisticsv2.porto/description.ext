@@ -18,7 +18,7 @@ overviewText = "karmakut.com";
     ----- Mission Loading Screen -----
 */
 
-onLoadName = "KarmaKut Logistics Test";
+onLoadName = "KarmaKut Logistics Test v2";
 loadScreen = "res\KarmaLoading.paa";
 onLoadMission = "karmakut.com";
 
