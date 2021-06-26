@@ -217,7 +217,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="KarmaKut Logistics Test v1.0";
+		briefingName="KarmaKut Logistics Test v1.1";
 		timeOfChanges=1800.0002;
 		startWeather=0.1;
 		startWind=0.1;

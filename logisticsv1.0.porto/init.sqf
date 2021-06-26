@@ -37,6 +37,8 @@ diag_log "init.sqf INIT";
     _return
 }] call acex_fortify_fnc_addDeployHandler;
 
+
+// TO DO - FIX (Currently only local)
 ["acex_fortify_onDeployStart", {
   params ["_player", "_object", "_cost"];
   [_object, false] remoteExec ["enableSimulationGlobal", 2];

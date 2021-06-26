@@ -9,6 +9,8 @@ _vehicle addAction [ "Convert COP" , {
 
     //TODO: Needs to attach marker to COP and create teleport point
 
+
+
     deleteVehicle _target;
 
     private _newCOP = COP createVehicle (_vehiclePos);

@@ -118,6 +118,10 @@ BUILD_RANGE = 20;
 MAX_FOBS = 5;
 MAX_COPS = 10;
 
+
+// TODO: Set prices for config, Add other needed items (Supply point, aresenal etc)
+
+
 StaticWeapons = [
   ["RHS_Stinger_AA_pod_WD", 100],
   ["RHS_M2StaticMG_WD", 100],

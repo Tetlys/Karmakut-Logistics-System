@@ -11,10 +11,6 @@ player linkItem "ItemCompass";
 player linkItem "ItemWatch";
 player linkItem "ItemRadio";
 
-["acex_fortify_onDeployStart", {
-  params ["_player", "_object", "_cost"];
-  _object enableSimulationGlobal false;
-}] call CBA_fnc_addPlayerEventHandler;
 
 // NOTE: Is outside of if case to handle some fucky case I guess
 _centerOfWorld = [worldSize / 2, worldSize / 2, 0];
