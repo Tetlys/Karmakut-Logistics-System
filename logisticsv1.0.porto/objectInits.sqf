@@ -31,13 +31,6 @@ diag_log "objectInits.sqf INIT";
 
 objectInits = [
 
-    // Add helipads to zeus, as they can't be recycled after built
-    [
-        ["Helipad_base_F", "LAND_uns_Heli_pad", "Helipad", "LAND_uns_evac_pad", "LAND_uns_Heli_H"],
-        {{[_x, [[_this], true]] remoteExecCall ["addCuratorEditableObjects", 2]} forEach allCurators;},
-        true
-    ],
-
     // Enables convert vehicle option
 
     [
