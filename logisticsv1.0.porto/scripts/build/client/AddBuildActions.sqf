@@ -6,6 +6,9 @@ if (!_actionsSet) then {
 	_building setVariable ["buildActionsSet", true];
 	diag_log format ["Adding Build Actions to %1", _building];
 
+
+	//TODO JIP not working correctly, Dosent add options for late joining players.
+
 	_building addAction [
 		"<t color='#FF0000'>Activate Building</t>", {
 			if ( ACTIVATED == 0 ) then {  // If less than 1 active, Run script, add one to profile name space

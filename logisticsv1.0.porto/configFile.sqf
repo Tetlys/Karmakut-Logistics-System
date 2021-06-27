@@ -119,7 +119,7 @@ MAX_FOBS = 5;
 MAX_COPS = 10;
 
 
-// TODO: Set prices for config, Add other needed items (Supply point, aresenal etc)
+// TODO: Set prices for config, Add other needed items (aresenal etc)
 
 
 StaticWeapons = [
@@ -272,7 +272,8 @@ Trucks = [
 ];
 ResourceExchange = [
   ["CargoNet_01_barrels_F", 500],
-  ["Land_MetalBarrel_F", 100]
+  ["Land_MetalBarrel_F", 100],
+  ["USMC_WarfareBVehicleServicePoint", 500] // Fleur ammo box script
 ];
 BuildPoint = [
   ["rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy", 100], // COP in transit
