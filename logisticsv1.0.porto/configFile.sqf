@@ -121,6 +121,7 @@ MAX_COPS = 10;
 
 // TODO: Set prices for config, Add other needed items (aresenal etc)
 
+// Presets (Can add objects to preset, but cannot add more presets)
 
 StaticWeapons = [
   ["RHS_Stinger_AA_pod_WD", 100],

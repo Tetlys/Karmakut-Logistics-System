@@ -15,6 +15,7 @@ private _resourcesPerFactory = createHashMap;
 
 
 // TODO: Nweed to attach a map marker to each factory!
+// TODO: Need to save each barrel on placement.
 
 while {true} do {
   {

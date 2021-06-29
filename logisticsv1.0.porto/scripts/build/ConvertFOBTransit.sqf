@@ -6,7 +6,7 @@ _vehicle addAction [ "Convert FOB" , {
     params ["_target", "_caller", "_actionId", "_arguments"];
     private _vehiclePos = getPos _target;
 
-    //TODO: Needs to attach marker to FOB and create teleport point
+    // TODO: Needs to attach marker to FOB and create teleport point
 
     deleteVehicle _target;
 
@@ -22,4 +22,3 @@ _vehicle addAction [ "Convert FOB" , {
 ];
 
 
-//Use FOBs instead of variables for calling budget, then save FOBs array at end and call at start
